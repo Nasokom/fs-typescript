@@ -3,7 +3,6 @@ name: Patientor API Tests
 on:
   push:
     branches: [ main, master ]
-
 jobs:
   test:
     runs-on: ubuntu-latest

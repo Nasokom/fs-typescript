@@ -1,0 +1,24 @@
+*{
+  margin:0;
+  box-sizing: border-box;
+}
+
+body{
+padding: 10px;
+}
+
+form{
+display:flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+}
+
+label{
+  display: flex;
+  gap: 10px;
+}
+
+.error{
+  color: red;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, Table, Button, TableHead, Typography, TableCell, TableRow, TableBody } from '@mui/material';
 import axios from 'axios';
+import { NavLink } from "react-router-dom";
 
 import { PatientFormValues, Patient } from "../../types";
 import AddPatientModal from "../AddPatientModal";
@@ -24,7 +25,7 @@ const PatientListPage = ({ patients, setPatients } : Props ) => {
   const closeModal = (): void => {
     setModalOpen(false);
     setError(undefined);
-  };
+  }; 
 
   const submitNewPatient = async (values: PatientFormValues) => {
     try {
@@ -66,7 +67,11 @@ const PatientListPage = ({ patients, setPatients } : Props ) => {
         <TableBody>
           {Object.values(patients).map((patient: Patient) => (
             <TableRow key={patient.id}>
-              <TableCell>{patient.name}</TableCell>
+              <TableCell>
+              <NavLink to={'/patients/'+patient.id}>
+                {patient.name}
+              </NavLink>
+                </TableCell>
               <TableCell>{patient.gender}</TableCell>
               <TableCell>{patient.occupation}</TableCell>
               <TableCell>
